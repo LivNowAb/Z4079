@@ -10,10 +10,10 @@ elif znamenko == '-':
 elif znamenko == '*':
     vysledek = prvni_cislo * druhe_cislo
 elif znamenko == '/':
-    if druhe_cislo != 0:
+    try:
         vysledek = prvni_cislo / druhe_cislo
-    else:
-        vysledek = "Chyba: Nulou nelze delit."
+    except ZeroDivisionError:
+        print("Nulou nelze delit.")
 else:
     vysledek = "Chyba."
 
