@@ -21,4 +21,4 @@ try:
     print(f"Vysledek je {vysledek}.")
 
 except ValueError:
-    print("Chyba: Zadejte cislo.")
+    print("Chyba: Zadejte spravny format.")
