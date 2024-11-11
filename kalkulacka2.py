@@ -4,7 +4,7 @@ try:
     znamenko = input("Zadejte znamenko (+, -, *, /): ")
 
     if znamenko not in ["+", "-", "*", "/"]:
-        raise ValueError("Zadali jste nespravny operátor. Použijte '+', '-', '*' nebo '/'")
+        raise ValueError("Zadali jste nespravny znak. Pouzijte '+', '-', '*' nebo '/'")
 
     druhe_cislo = float(input("Zadejte druhe cislo: "))
 
@@ -22,6 +22,6 @@ try:
     print(f"Vysledek je {vysledek}.")
 
 except ValueError:
-    print(f"Chyba: Zadali jste nespravny operátor. Použijte '+', '-', '*' nebo '/'")
+    print(f"Chyba: Zadali jste nespravny znak. Pouzijte '+', '-', '*' nebo '/'")
 except ZeroDivisionError:
     print(f"Chyba: Nulou nelze delit!")
