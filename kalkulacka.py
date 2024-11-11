@@ -1,6 +1,10 @@
 try:
     prvni_cislo = float(input("Zadejte prvni cislo: "))
+
     znamenko = input("Zadejte znamenko (+, -, *, /): ")
+    if znamenko not in ["+", "-", "*", "/"]:
+        raise ValueError("Zadali jste nespravny znak. Pouzijte '+', '-', '*', '/'")
+
     druhe_cislo = float(input("Zadejte druhe cislo: "))
 
 
