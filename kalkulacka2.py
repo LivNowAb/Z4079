@@ -23,5 +23,5 @@ try:
 
 except ValueError:
     print(f"Chyba: Zadali jste nespravny operátor. Použijte '+', '-', '*' nebo '/'")
-except ZeroDivisionError as e:
+except ZeroDivisionError:
     print(f"Chyba: Nulou nelze delit!")
