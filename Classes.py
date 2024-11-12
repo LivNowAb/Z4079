@@ -14,7 +14,13 @@ class Fish(Animals):
     def swim(self):
         print("Swimming in the sea.")
 
+    def look(self):
+        print("Fish are looking underwater...")
+
 class Bird(Animals):
+
+    def look(self):
+        print("Fish are looking underwater...")
 
     def fly(self):
         print("Flying high, feeling free...")
@@ -40,3 +46,4 @@ class DomesticDog(Mammal):
 dd1 = DomesticDog(30, 7, "german shepherd", "brown")
 dd1.bark()
 print(dd1.breed)
+dd1.look()
