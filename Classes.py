@@ -10,7 +10,7 @@ class Animals:
     def add_weight(cls, weight):
         cls.total_weight += weight
 
-    # def set_weight(self, changed_weight):
+    # def set_weight(self, changed_weight): TBA
 
 
 
