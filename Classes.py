@@ -14,13 +14,13 @@ class Fish(Animals):
     def swim(self):
         print("Swimming in the sea.")
 
-    def look(self):
-        print("Fish are looking underwater...")
+    def turn(self):
+        print("Turning right...")
 
 class Bird(Animals):
 
-    def look(self):
-        print("Fish are looking underwater...")
+    def turn(self):
+        print("Turning left")
 
     def fly(self):
         print("Flying high, feeling free...")
@@ -47,3 +47,5 @@ dd1 = DomesticDog(30, 7, "german shepherd", "brown")
 dd1.bark()
 print(dd1.breed)
 dd1.look()
+brd1 = Bird(0.4, 4)
+brd1.turn()
