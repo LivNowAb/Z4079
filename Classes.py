@@ -17,9 +17,7 @@ class Animals:
     def set_weight(self, changed_weight):
         Animals.delete_weight(self.weight)
         self.weight = changed_weight
-        Animals.changed_weight(self.weight)
-
-
+        Animals.add_weight(self.weight)
 
     def look(self):
         print(f"Looking at you...")
