@@ -10,7 +10,14 @@ class Animals:
     def add_weight(cls, weight):
         cls.total_weight += weight
 
-    # def set_weight(self, changed_weight): TBA
+    @classmethod
+    def delete_weight(cls, weight):
+        cls.total_weight -= weight
+
+    def set_weight(self, changed_weight):
+        Animals.delete_weight(self.weight)
+        self.weight = changed_weight
+        Animals.changed_weight(self.weight)
 
 
 
@@ -66,4 +73,5 @@ print(dd1.breed)
 dd1.look()
 brd1 = Bird(0.4, 4)
 brd1.turn()
+brd1.set_weight(0.6)
 print(Animals.total_weight)
