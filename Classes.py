@@ -43,6 +43,12 @@ class DomesticDog(Mammal):
     def retrieve(self):
         print(f"Retrieving everything back to the owner.")
 
+class Ptakopysk(Bird, Fish):
+    pass
+
+ptakopysk = Ptakopysk(20, 3)
+ptakopysk.turn()
+
 dd1 = DomesticDog(30, 7, "german shepherd", "brown")
 dd1.bark()
 print(dd1.breed)
