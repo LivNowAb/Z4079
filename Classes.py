@@ -1,7 +1,18 @@
 class Animals:
+    total_weight = 0
+
     def __init__(self, weight, age):
         self.weight = weight
         self.age = age
+        Animals.add_weight(self.weight)
+
+    @classmethod
+    def add_weight(cls, weight):
+        cls.total_weight += weight
+
+    # def set_weight(self, changed_weight):
+
+
 
     def look(self):
         print(f"Looking at you...")
@@ -55,3 +66,4 @@ print(dd1.breed)
 dd1.look()
 brd1 = Bird(0.4, 4)
 brd1.turn()
+print(Animals.total_weight)
