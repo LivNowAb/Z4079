@@ -20,7 +20,7 @@ class Fish(Animals):
 class Bird(Animals):
 
     def turn(self):
-        print("Turning left")
+        print("Turning left...")
 
     def fly(self):
         print("Flying high, feeling free...")
