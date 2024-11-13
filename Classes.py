@@ -62,14 +62,25 @@ class DomesticDog(Mammal):
 class Ptakopysk(Bird, Fish):
     pass
 
+zvirata = []
+
 ptakopysk = Ptakopysk(20, 3)
+zvirata.append(ptakopysk)
 ptakopysk.turn()
 
 dd1 = DomesticDog(30, 7, "german shepherd", "brown")
+zvirata.append(dd1)
+
 dd1.bark()
 print(dd1.breed)
 dd1.look()
+
 brd1 = Bird(0.4, 4)
+zvirata.append(brd1)
+
 brd1.turn()
 brd1.set_weight(0.6)
 print(Animals.total_weight)
+
+for zvire in zvirata:
+    print(f"Hmotnost zvirete {type(zvire).__name__} je {zvire.weight}.")
