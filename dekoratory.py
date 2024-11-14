@@ -20,14 +20,14 @@
 def with_password(func):
     pozadovane_heslo = "zadavamheslo42+"
     def nova_funkce():
-        heslo = input(f"Zadejte spravne heslo: \n ")
+        heslo = input(f"Zadejte spravne heslo: \n")
         if heslo == pozadovane_heslo:
             print(f"Zadali jste spravne heslo, kod pro Vas je nyni dostupny.")
             return func()
         else:
             print(f"Zadali jste spatne heslo.")
             return None
-    return nova_funkceza
+    return nova_funkce
 
 
 @with_password
@@ -35,3 +35,4 @@ def vloz_heslo():
     print("Kod je nyni dostupny")
 
 vloz_heslo()
+
