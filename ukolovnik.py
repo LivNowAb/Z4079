@@ -10,6 +10,7 @@ Uložit poznámky do souboru .csv (budeme vyzváni do jakého souboru)
 Načíst poznámky ze souboru .csv (budeme vyzváni z jakého souboru)"""
 
 import csv
+import pickle
 
 class Notes:
     def __init__(self):
@@ -82,13 +83,34 @@ class Notes:
         with open(filename, mode='r', newline='', encoding='utf-8') as file:
             reader = csv.reader(file)
             self.notes = [row[0] for row in reader]
-        print(f"Poznámky byly načteny ze souboru '{filename}'.")
+        print(f"Poznamky byly nacteny ze souboru '{filename}'.")
+
+    def save_pickle(self):
+        filename = input(f"Zadejte jmeno souboru pro ulozeni (s priponou .pkl): ")
+        if not ".pkl" in filename:
+            print("Soubor musi mit priponu .pkl")
+            return
+        with open(filename, 'wb') as file:
+            pickle.dump(self.notes, file)
+        print(f"Poznamky byly ulozeny do souboru '{filename}' (pickle).")
+
+    def load_pickle(self):
+        filename = input("Zadejte nazev souboru pro nacteni (s priponou .csv): ")
+
+        if not ".pkl" in filename:
+            print("Soubor musi mit priponu .pkl")
+            return
+
+        with open(filename, 'rb') as file:
+            self.notes = pickle.load(file)
+        print(f"Poznamky byly nacteny ze souboru '{filename}'.")
 
 def choose_action():
     notebook = Notes()
     while True:
         action = input(
-            f"Vyberte, jaky ukon si prejete s poznamkami provest: pridat, zobrazit, smazat, upravit, ulozit, nacist, ukoncit: ")
+            f"Vyberte, jaky ukon si prejete s poznamkami provest:"
+            f" pridat, zobrazit, smazat, upravit, ulozit, nacist, ulozit_pkl, nacist_pkl, ukoncit: ").lower()
         if action == "pridat":
             notebook.add_note()
         elif action == "zobrazit":
@@ -101,6 +123,10 @@ def choose_action():
                 notebook.save_csv()
         elif action == "nacist":
                 notebook.load_csv()
+        elif action == "ulozit_pkl"
+            notebook.save_pickle()
+        elif action == "nacist_pkl":
+                notebook.load_pickle()
         elif action == "ukoncit":
                 print(f"Neplecha ukoncena.")
                 break
