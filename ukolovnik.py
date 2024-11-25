@@ -134,3 +134,5 @@ def choose_action():
             print(f"Zadali jste nepovoleny ukon. Zkuste to jeste jednou.")
 
 choose_action()
+
+# json tba
