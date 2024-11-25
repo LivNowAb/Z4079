@@ -123,7 +123,7 @@ def choose_action():
                 notebook.save_csv()
         elif action == "nacist":
                 notebook.load_csv()
-        elif action == "ulozit_pkl"
+        elif action == "ulozit_pkl":
             notebook.save_pickle()
         elif action == "nacist_pkl":
                 notebook.load_pickle()
