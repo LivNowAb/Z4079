@@ -29,38 +29,59 @@ class Notes:
                 print(f"{i + 1}. {note}")
 
     def delete_note(self):
-        num_delete = int(input(f"Zadejte cislo radku s poznamkou, kterou si prejete smazat: "))
-        if 1 <= num_delete <= len(self.notes):
-            deleted_note = self.notes.pop(num_delete - 1)
-            print(f"Poznamka cislo {num_delete} byla smazana.")
-        else:
-            print(f"Pod zadanym cislem neexistuje poznamka.")
+        try:
+            if not self.notes:
+                print("Nejsou zde zadne poznamky."
+                return
+            num_delete = int(input(f"Zadejte cislo radku s poznamkou, kterou si prejete smazat: "))
+            if 1 <= num_delete <= len(self.notes):
+                deleted_note = self.notes.pop(num_delete - 1)
+                print(f"Poznamka cislo {num_delete} byla smazana.")
+            else:
+                print(f"Pod zadanym cislem neexistuje poznamka.")
+        except ValueError:
+            print("Je treba zadat platne cislo.")
+
 
     def edit_note(self):
-        num_edit = int(input(f"Zadejte cislo poznamky, kterou chcete upravit: "))
-        if 1 <= num_edit <= len(self.notes):
-            new_note = input(f"Zadejte novou poznamku misto puvodni poznamky: ")
-            self.notes[num_edit - 1] = new_note
-            print(f"Poznamka cislo {num_edit} byla zmenena.")
-        else:
+        try:
+            if not self.notes:
+                print(f"K dispozici neni zadna poznamka pro upravu.")
+                return
+
+            num_edit = int(input(f"Zadejte cislo poznamky, kterou chcete upravit: "))
+            if 1 <= num_edit <= len(self.notes):
+                new_note = input(f"Zadejte novou poznamku misto puvodni poznamky: ")
+                self.notes[num_edit - 1] = new_note
+                print(f"Poznamka cislo {num_edit} byla zmenena.")
+            else:
             print(f"Pod timto cislem nebyla nalezena zadna poznamka.")
+        except ValueError:
+            print("Je treba zadat platne cislo.")
 
     def save_csv(self):
         filename = input("Zadejte nazev souboru pro ulozeni (s priponou .csv): ")
+        if not ".csv" in filename:
+            print("Soubor musi mit priponu .csv")
+            return
         with open(filename, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             for note in self.notes:
                 writer.writerow([note])
         print(f"Poznamky byly ulozeny do souboru '{filename}'.")
 
+
     def load_csv(self):
         filename = input("Zadejte nazev souboru pro nacteni (s priponou .csv): ")
+
+        if not ".csv" in filename:
+            print("Soubor musi mit priponu .csv")
+            return
+
         with open(filename, mode='r', newline='', encoding='utf-8') as file:
             reader = csv.reader(file)
             self.notes = [row[0] for row in reader]
         print(f"Poznámky byly načteny ze souboru '{filename}'.")
-
-
 
 def choose_action():
     notebook = Notes()
