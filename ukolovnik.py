@@ -24,21 +24,23 @@ class Notes:
         if not self.notes:
             print(f"V ukolovniku nejsou zadne poznamky")
         else:
-            print(self.notes)
+            print(f"Poznamky: ")
+            for i, note in enumerate(self.notes):
+                print(f"{i + 1}. {note}")
 
     def delete_note(self):
         num_delete = int(input(f"Zadejte cislo radku s poznamkou, kterou si prejete smazat: "))
-        if 0 <= num_delete <= len(self.notes):
-            deleted_note = self.notes.pop(num_delete)
+        if 1 <= num_delete <= len(self.notes):
+            deleted_note = self.notes.pop(num_delete - 1)
             print(f"Poznamka cislo {num_delete} byla smazana.")
         else:
             print(f"Pod zadanym cislem neexistuje poznamka.")
 
     def edit_note(self):
         num_edit = int(input(f"Zadejte cislo poznamky, kterou chcete upravit: "))
-        if 0 <= num_edit <= len(self.notes):
+        if 1 <= num_edit <= len(self.notes):
             new_note = input(f"Zadejte novou poznamku misto puvodni poznamky: ")
-            self.notes[num_edit] = new_note
+            self.notes[num_edit - 1] = new_note
             print(f"Poznamka cislo {num_edit} byla zmenena.")
         else:
             print(f"Pod timto cislem nebyla nalezena zadna poznamka.")
