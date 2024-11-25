@@ -31,8 +31,9 @@ class Notes:
     def delete_note(self):
         try:
             if not self.notes:
-                print("Nejsou zde zadne poznamky."
+                print("Nejsou zde zadne poznamky.")
                 return
+
             num_delete = int(input(f"Zadejte cislo radku s poznamkou, kterou si prejete smazat: "))
             if 1 <= num_delete <= len(self.notes):
                 deleted_note = self.notes.pop(num_delete - 1)
@@ -55,7 +56,7 @@ class Notes:
                 self.notes[num_edit - 1] = new_note
                 print(f"Poznamka cislo {num_edit} byla zmenena.")
             else:
-            print(f"Pod timto cislem nebyla nalezena zadna poznamka.")
+                print(f"Pod timto cislem nebyla nalezena zadna poznamka.")
         except ValueError:
             print("Je treba zadat platne cislo.")
 
