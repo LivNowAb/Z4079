@@ -1,6 +1,6 @@
 # svoje jmeno, gen post. vraci editace jmena
-# Albert - program si pamatuje koncovku -bert
-# pred ni davany "Al", "Ro", "Hu", "Nor", "Gil"
+# Albert - program si pamatuje -bert
+# pred ni davame "Al", "Ro", "Hu", "Nor", "Gil"
 
 def GeneratorJmen(cast1, cast2):
     for item in cast1:
