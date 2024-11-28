@@ -110,7 +110,8 @@ def choose_action():
     while True:
         action = input(
             f"Vyberte, jaky ukon si prejete s poznamkami provest:"
-            f" pridat, zobrazit, smazat, upravit, ulozit, nacist, ulozit_pkl, nacist_pkl, ukoncit: ").lower()
+            f" pridat, zobrazit, smazat, upravit, ulozit, nacist, "
+            f"ulozit_pkl, nacist_pkl, ukoncit: ").lower()
         if action == "pridat":
             notebook.add_note()
         elif action == "zobrazit":
