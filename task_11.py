@@ -8,14 +8,13 @@ class Iterator_mocnin:
         return self
 
     def __next__(self):
-        if self.pozice >= len(self.seznam):
+        if self.pozice >= self.seznam:
             raise StopIteration
-        num = self.seznam[self.pozice]
         self.pozice += 1
-        return num ** 2
+        return self.pozice ** 2
 
-numbers = [1, 2, 3, 4, 5]
-mocniny = Iterator_mocnin(numbers)
+
+mocniny = Iterator_mocnin(5)
 
 for mocnina in mocniny:
     print(mocnina)
