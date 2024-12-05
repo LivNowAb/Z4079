@@ -1,3 +1,6 @@
 print(f"Toto je priklad.")
 
-print(f"Toto je nova vetev.")
+
+ # doplneni
+
+ #  a doplneni vedlejsi vetve
